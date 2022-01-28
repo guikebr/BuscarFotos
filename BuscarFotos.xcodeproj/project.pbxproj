@@ -7,6 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		841D995927A43138003216FF /* Imgur.swift in Sources */ = {isa = PBXBuildFile; fileRef = 841D995827A43138003216FF /* Imgur.swift */; };
+		841D995C27A4316D003216FF /* NetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 841D995B27A4316C003216FF /* NetworkService.swift */; };
+		841D995E27A431B1003216FF /* GetImgursResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 841D995D27A431B1003216FF /* GetImgursResponse.swift */; };
+		841D996127A431EC003216FF /* Failure.swift in Sources */ = {isa = PBXBuildFile; fileRef = 841D996027A431EC003216FF /* Failure.swift */; };
+		841D996327A432D9003216FF /* Key.swift in Sources */ = {isa = PBXBuildFile; fileRef = 841D996227A432D9003216FF /* Key.swift */; };
 		847745AD27A3261B0093EB7D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 847745AC27A3261B0093EB7D /* AppDelegate.swift */; };
 		847745AF27A3261B0093EB7D /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 847745AE27A3261B0093EB7D /* SceneDelegate.swift */; };
 		847745B127A3261B0093EB7D /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 847745B027A3261B0093EB7D /* ViewController.swift */; };
@@ -16,6 +21,7 @@
 		847745C427A3261E0093EB7D /* BuscarFotosTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 847745C327A3261E0093EB7D /* BuscarFotosTests.swift */; };
 		847745CE27A3261E0093EB7D /* BuscarFotosUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 847745CD27A3261E0093EB7D /* BuscarFotosUITests.swift */; };
 		847745D027A3261E0093EB7D /* BuscarFotosUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 847745CF27A3261E0093EB7D /* BuscarFotosUITestsLaunchTests.swift */; };
+		847745E127A35ABC0093EB7D /* ImageCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 847745E027A35ABC0093EB7D /* ImageCollectionViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -36,6 +42,11 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		841D995827A43138003216FF /* Imgur.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Imgur.swift; sourceTree = "<group>"; };
+		841D995B27A4316C003216FF /* NetworkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkService.swift; sourceTree = "<group>"; };
+		841D995D27A431B1003216FF /* GetImgursResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetImgursResponse.swift; sourceTree = "<group>"; };
+		841D996027A431EC003216FF /* Failure.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Failure.swift; sourceTree = "<group>"; };
+		841D996227A432D9003216FF /* Key.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Key.swift; sourceTree = "<group>"; };
 		847745A927A3261B0093EB7D /* BuscarFotos.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BuscarFotos.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		847745AC27A3261B0093EB7D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		847745AE27A3261B0093EB7D /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -49,6 +60,7 @@
 		847745C927A3261E0093EB7D /* BuscarFotosUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BuscarFotosUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		847745CD27A3261E0093EB7D /* BuscarFotosUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BuscarFotosUITests.swift; sourceTree = "<group>"; };
 		847745CF27A3261E0093EB7D /* BuscarFotosUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BuscarFotosUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		847745E027A35ABC0093EB7D /* ImageCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageCollectionViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -76,6 +88,50 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		841D995727A43117003216FF /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				841D995827A43138003216FF /* Imgur.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		841D995A27A43155003216FF /* External */ = {
+			isa = PBXGroup;
+			children = (
+				841D995B27A4316C003216FF /* NetworkService.swift */,
+				841D995D27A431B1003216FF /* GetImgursResponse.swift */,
+			);
+			path = External;
+			sourceTree = "<group>";
+		};
+		841D995F27A431CE003216FF /* core */ = {
+			isa = PBXGroup;
+			children = (
+				841D996027A431EC003216FF /* Failure.swift */,
+				841D996227A432D9003216FF /* Key.swift */,
+			);
+			path = core;
+			sourceTree = "<group>";
+		};
+		841D996427A434A2003216FF /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				847745B027A3261B0093EB7D /* ViewController.swift */,
+				847745E027A35ABC0093EB7D /* ImageCollectionViewCell.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		841D996527A43635003216FF /* Utility */ = {
+			isa = PBXGroup;
+			children = (
+				847745AC27A3261B0093EB7D /* AppDelegate.swift */,
+				847745AE27A3261B0093EB7D /* SceneDelegate.swift */,
+			);
+			path = Utility;
+			sourceTree = "<group>";
+		};
 		847745A027A3261B0093EB7D = {
 			isa = PBXGroup;
 			children = (
@@ -99,9 +155,11 @@
 		847745AB27A3261B0093EB7D /* BuscarFotos */ = {
 			isa = PBXGroup;
 			children = (
-				847745AC27A3261B0093EB7D /* AppDelegate.swift */,
-				847745AE27A3261B0093EB7D /* SceneDelegate.swift */,
-				847745B027A3261B0093EB7D /* ViewController.swift */,
+				841D996527A43635003216FF /* Utility */,
+				841D996427A434A2003216FF /* Controller */,
+				841D995F27A431CE003216FF /* core */,
+				841D995A27A43155003216FF /* External */,
+				841D995727A43117003216FF /* Model */,
 				847745B227A3261B0093EB7D /* Main.storyboard */,
 				847745B527A3261E0093EB7D /* Assets.xcassets */,
 				847745B727A3261E0093EB7D /* LaunchScreen.storyboard */,
@@ -258,9 +316,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				841D996127A431EC003216FF /* Failure.swift in Sources */,
 				847745B127A3261B0093EB7D /* ViewController.swift in Sources */,
+				847745E127A35ABC0093EB7D /* ImageCollectionViewCell.swift in Sources */,
 				847745AD27A3261B0093EB7D /* AppDelegate.swift in Sources */,
 				847745AF27A3261B0093EB7D /* SceneDelegate.swift in Sources */,
+				841D995C27A4316D003216FF /* NetworkService.swift in Sources */,
+				841D995E27A431B1003216FF /* GetImgursResponse.swift in Sources */,
+				841D995927A43138003216FF /* Imgur.swift in Sources */,
+				841D996327A432D9003216FF /* Key.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

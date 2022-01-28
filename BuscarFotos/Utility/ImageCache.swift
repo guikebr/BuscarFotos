@@ -2,7 +2,7 @@
 //  ImageCache.swift
 //  BuscarFotos
 //
-//  Created by Admin on 28/01/22.
+//  Created by Guike on 28/01/22.
 //
 
 import UIKit

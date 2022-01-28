@@ -2,7 +2,7 @@
 //  AppDelegate.swift
 //  BuscarFotos
 //
-//  Created by Admin on 27/01/22.
+//  Created by Guike on 27/01/22.
 //
 
 import UIKit

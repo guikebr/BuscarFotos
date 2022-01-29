@@ -14,13 +14,14 @@ class NetworkService {
     static let shared = NetworkService()
     private init() {}
     
+    let baseURL = "https://api.imgur.com/3"
     let session = URLSession.shared
     var currentPage: Int = 0
     var searchText: String = ""
     
     func fetchPhotos(query: String, success successBlock: @escaping (GetImgursResponse) -> Void) {
         searchText = query
-        let urlString = "https://api.imgur.com/3/gallery/search/\(currentPage)?q=\(query)&q_size_px=small&q_type=jpg"
+        let urlString = "\(baseURL)/gallery/search/\(currentPage)?q=\(query)&q_size_px=small&q_type=png"
         guard let url = URL(string: urlString) else {
             return
         }
@@ -44,7 +45,7 @@ class NetworkService {
         }.resume()
     }
     
-    func nextPage(success successBlock: @escaping ([Imgur]) -> Void) {
+    func nextPage(success successBlock: @escaping ([ImgurModel]) -> Void) {
         currentPage += 1
         fetchPhotos(query: searchText, success: { (response) in
             successBlock(response.imgurs)

@@ -21,5 +21,23 @@
 			</array>
 		</dict>
 	</dict>
+	<key>NSAppTransportSecurity</key>
+	<dict>
+		<key>NSAllowsArbitraryLoads</key>
+		<true/>
+	</dict>
+	<key>CFBundleURLTypes</key>
+	<array>
+		<dict>
+			<key>CFBundleTypeRole</key>
+			<string>Viewer</string>
+			<key>CFBundleURLSchemes</key>
+			<array>
+				<string>imgurapp</string>
+			</array>
+			<key>CFBundleURLName</key>
+			<string>imgurapp</string>
+		</dict>
+	</array>
 </dict>
 </plist>

@@ -7,7 +7,7 @@
 
 import UIKit
 
-struct Imgur {
+struct ImgurModel {
     let id: String
     let link: String
     let title: String
@@ -19,7 +19,7 @@ struct Imgur {
             else { return nil }
         self.id = id
         self.title = title
-        self.link = "https://i.imgur.com/\(link).jpg"
+        self.link = "https://i.imgur.com/\(link).png"
     }
     
     func image(completion: @escaping (UIImage) -> Void) {

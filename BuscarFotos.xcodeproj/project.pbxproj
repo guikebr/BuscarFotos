@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		841D995927A43138003216FF /* Imgur.swift in Sources */ = {isa = PBXBuildFile; fileRef = 841D995827A43138003216FF /* Imgur.swift */; };
+		841D995927A43138003216FF /* ImgurModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 841D995827A43138003216FF /* ImgurModel.swift */; };
 		841D995C27A4316D003216FF /* NetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 841D995B27A4316C003216FF /* NetworkService.swift */; };
 		841D995E27A431B1003216FF /* GetImgursResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 841D995D27A431B1003216FF /* GetImgursResponse.swift */; };
 		841D996127A431EC003216FF /* Failure.swift in Sources */ = {isa = PBXBuildFile; fileRef = 841D996027A431EC003216FF /* Failure.swift */; };
@@ -23,6 +23,7 @@
 		847745D027A3261E0093EB7D /* BuscarFotosUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 847745CF27A3261E0093EB7D /* BuscarFotosUITestsLaunchTests.swift */; };
 		847745E127A35ABC0093EB7D /* ImageCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 847745E027A35ABC0093EB7D /* ImageCollectionViewCell.swift */; };
 		84A3686227A46BB0008F1F88 /* ImageCache.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84A3686127A46BB0008F1F88 /* ImageCache.swift */; };
+		84E224E327A4BF97006F40AF /* MockURLSession.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84E224E227A4BF97006F40AF /* MockURLSession.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -43,7 +44,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		841D995827A43138003216FF /* Imgur.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Imgur.swift; sourceTree = "<group>"; };
+		841D995827A43138003216FF /* ImgurModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImgurModel.swift; sourceTree = "<group>"; };
 		841D995B27A4316C003216FF /* NetworkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkService.swift; sourceTree = "<group>"; };
 		841D995D27A431B1003216FF /* GetImgursResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetImgursResponse.swift; sourceTree = "<group>"; };
 		841D996027A431EC003216FF /* Failure.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Failure.swift; sourceTree = "<group>"; };
@@ -63,6 +64,7 @@
 		847745CF27A3261E0093EB7D /* BuscarFotosUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BuscarFotosUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		847745E027A35ABC0093EB7D /* ImageCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageCollectionViewCell.swift; sourceTree = "<group>"; };
 		84A3686127A46BB0008F1F88 /* ImageCache.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageCache.swift; sourceTree = "<group>"; };
+		84E224E227A4BF97006F40AF /* MockURLSession.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockURLSession.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -93,7 +95,7 @@
 		841D995727A43117003216FF /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				841D995827A43138003216FF /* Imgur.swift */,
+				841D995827A43138003216FF /* ImgurModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -121,8 +123,6 @@
 				84A3686127A46BB0008F1F88 /* ImageCache.swift */,
 				841D996027A431EC003216FF /* Failure.swift */,
 				841D996227A432D9003216FF /* Key.swift */,
-				847745AC27A3261B0093EB7D /* AppDelegate.swift */,
-				847745AE27A3261B0093EB7D /* SceneDelegate.swift */,
 			);
 			path = Utility;
 			sourceTree = "<group>";
@@ -150,15 +150,14 @@
 		847745AB27A3261B0093EB7D /* BuscarFotos */ = {
 			isa = PBXGroup;
 			children = (
+				847745B527A3261E0093EB7D /* Assets.xcassets */,
+				847745BA27A3261E0093EB7D /* Info.plist */,
+				84E224DA27A4B524006F40AF /* AppDelegate */,
 				84A3686427A47658008F1F88 /* View */,
 				841D996527A43635003216FF /* Utility */,
 				841D996427A434A2003216FF /* Controller */,
 				841D995A27A43155003216FF /* External */,
 				841D995727A43117003216FF /* Model */,
-				847745B227A3261B0093EB7D /* Main.storyboard */,
-				847745B527A3261E0093EB7D /* Assets.xcassets */,
-				847745B727A3261E0093EB7D /* LaunchScreen.storyboard */,
-				847745BA27A3261E0093EB7D /* Info.plist */,
 			);
 			path = BuscarFotos;
 			sourceTree = "<group>";
@@ -166,6 +165,7 @@
 		847745C227A3261E0093EB7D /* BuscarFotosTests */ = {
 			isa = PBXGroup;
 			children = (
+				84E224E127A4BF8C006F40AF /* Mock */,
 				847745C327A3261E0093EB7D /* BuscarFotosTests.swift */,
 			);
 			path = BuscarFotosTests;
@@ -183,9 +183,44 @@
 		84A3686427A47658008F1F88 /* View */ = {
 			isa = PBXGroup;
 			children = (
-				847745E027A35ABC0093EB7D /* ImageCollectionViewCell.swift */,
+				84E224D927A4B4DE006F40AF /* Base */,
+				84E224D827A4B4BE006F40AF /* Cell */,
 			);
 			path = View;
+			sourceTree = "<group>";
+		};
+		84E224D827A4B4BE006F40AF /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				847745E027A35ABC0093EB7D /* ImageCollectionViewCell.swift */,
+			);
+			path = Cell;
+			sourceTree = "<group>";
+		};
+		84E224D927A4B4DE006F40AF /* Base */ = {
+			isa = PBXGroup;
+			children = (
+				847745B227A3261B0093EB7D /* Main.storyboard */,
+				847745B727A3261E0093EB7D /* LaunchScreen.storyboard */,
+			);
+			path = Base;
+			sourceTree = "<group>";
+		};
+		84E224DA27A4B524006F40AF /* AppDelegate */ = {
+			isa = PBXGroup;
+			children = (
+				847745AE27A3261B0093EB7D /* SceneDelegate.swift */,
+				847745AC27A3261B0093EB7D /* AppDelegate.swift */,
+			);
+			path = AppDelegate;
+			sourceTree = "<group>";
+		};
+		84E224E127A4BF8C006F40AF /* Mock */ = {
+			isa = PBXGroup;
+			children = (
+				84E224E227A4BF97006F40AF /* MockURLSession.swift */,
+			);
+			path = Mock;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -327,7 +362,7 @@
 				847745AF27A3261B0093EB7D /* SceneDelegate.swift in Sources */,
 				841D995C27A4316D003216FF /* NetworkService.swift in Sources */,
 				841D995E27A431B1003216FF /* GetImgursResponse.swift in Sources */,
-				841D995927A43138003216FF /* Imgur.swift in Sources */,
+				841D995927A43138003216FF /* ImgurModel.swift in Sources */,
 				841D996327A432D9003216FF /* Key.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -336,6 +371,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				84E224E327A4BF97006F40AF /* MockURLSession.swift in Sources */,
 				847745C427A3261E0093EB7D /* BuscarFotosTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -510,9 +546,11 @@
 				DEVELOPMENT_TEAM = 5HL64N4YHM;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = BuscarFotos/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = BuscarFotos;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -524,7 +562,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -538,9 +576,11 @@
 				DEVELOPMENT_TEAM = 5HL64N4YHM;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = BuscarFotos/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = BuscarFotos;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -552,7 +592,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};

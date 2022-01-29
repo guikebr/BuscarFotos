@@ -9,7 +9,15 @@ import UIKit
 
 class ViewController: UIViewController, UISearchBarDelegate {
     private var collectionView: UICollectionView?
-    var imgurs = [Imgur]()
+    private var imgurs: [ImgurModel] = [] {
+        didSet {
+            DispatchQueue.main.async {
+                self.collectionView?.reloadData()
+                self.fadeView.removeFromSuperview()
+                self.activityView.stopAnimating()
+            }
+        }
+    }
     
     let activityView = UIActivityIndicatorView(style: .large)
     let searchbar = UISearchBar()
@@ -34,13 +42,10 @@ class ViewController: UIViewController, UISearchBarDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        layoutSeachBar()
-        layoutCollectionView()
+        setupSeachBar()
+        setupCollectionView()
         NetworkService.shared.fetchPhotos(query: "random", success: { (response) in
-            self.imgurs = response.imgurs
-            self.collectionView?.reloadData()
-            self.fadeView.removeFromSuperview()
-            self.stopAnimation()
+            self.imgurs.append(contentsOf: response.imgurs)
         })
     }
     
@@ -55,12 +60,12 @@ class ViewController: UIViewController, UISearchBarDelegate {
         imageCache.removeAllObjects()
     }
     
-    private func layoutSeachBar() {
+    private func setupSeachBar() {
         searchbar.delegate = self
         view.addSubview(searchbar)
     }
     
-    private func layoutCollectionView() {
+    private func setupCollectionView() {
         let layout = UICollectionViewFlowLayout()
         layout.scrollDirection = .vertical
         layout.minimumLineSpacing = 0
@@ -79,23 +84,12 @@ class ViewController: UIViewController, UISearchBarDelegate {
         searchBar.resignFirstResponder()
         if let text = searchbar.text {
             imgurs = []
-            collectionView?.reloadData()
             // start animating activity view
             activityView.startAnimating()
             NetworkService.shared.fetchPhotos(query: text, success: { (response) in
-                self.imgurs = response.imgurs
-                self.collectionView?.reloadData()
-                self.stopAnimation()
+                self.imgurs.append(contentsOf: response.imgurs)
             })
         }
-    }
-    
-    private func startAnimation() {
-        activityView.startAnimating()
-    }
-    
-    private func stopAnimation() {
-        activityView.stopAnimating()
     }
 }
 
@@ -120,9 +114,7 @@ extension ViewController: UICollectionViewDelegate, UICollectionViewDataSource {
             // start animating activity view
             activityView.startAnimating()
             NetworkService.shared.nextPage(success: { (imgurs) in
-                self.imgurs += imgurs
-                self.collectionView?.reloadData()
-                self.stopAnimation()
+                self.imgurs.append(contentsOf: imgurs)
             })
         }
    }

@@ -8,11 +8,11 @@
 import Foundation
 
 struct GetImgursResponse {
-    let imgurs: [Imgur]
+    let imgurs: [ImgurModel]
     
     init (json: JSON) throws {
         guard let dataJson = json["data"] as? [JSON] else { throw NetworkingError.jsonError }
-        let imgurs = dataJson.map{ Imgur(json: $0) }.compactMap{ $0 }
+        let imgurs = dataJson.map{ ImgurModel(json: $0) }.compactMap{ $0 }
         self.imgurs = imgurs
     }
 }

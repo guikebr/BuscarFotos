@@ -36,7 +36,7 @@ class ImageCollectionViewCell: UICollectionViewCell {
         imageView.image = nil
     }
     
-    func configure(with imgur: Imgur) {
+    func configure(with imgur: ImgurModel) {
         imgur.image { (image) in
             self.imageView.image = image
         }

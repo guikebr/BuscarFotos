@@ -9,28 +9,46 @@ import XCTest
 @testable import BuscarFotos
 
 class BuscarFotosTests: XCTestCase {
-
-    override func setUpWithError() throws {
-        // Put setup code here. This method is called before the invocation of each test method in the class.
+    var httpClient: HttpClient!
+    let session = MockURLSession()
+    
+    override func setUp() {
+        super.setUp()
+        httpClient = HttpClient(session: session)
     }
-
-    override func tearDownWithError() throws {
-        // Put teardown code here. This method is called after the invocation of each test method in the class.
-    }
-
-    func testExample() throws {
-        // This is an example of a functional test case.
-        // Use XCTAssert and related functions to verify your tests produce the correct results.
-        // Any test you write for XCTest can be annotated as throws and async.
-        // Mark your test throws to produce an unexpected failure when your test encounters an uncaught error.
-        // Mark your test async to allow awaiting for asynchronous code to complete. Check the results with assertions afterwards.
-    }
-
-    func testPerformanceExample() throws {
-        // This is an example of a performance test case.
-        self.measure {
-            // Put the code you want to measure the time of here.
+    
+    func test_getRequestWithURL() {
+        guard let url = URL(string: "https://api.imgur.com/3") else {
+            fatalError("URL não pode ser vazia")
         }
+        httpClient.get(url: url) { (success, response) in
+            // Return data
+        }
+        XCTAssert(session.lastURL == url)
     }
-
+    
+    func test_getResumeCalled() {
+        let dataTask = MockURLSessionDataTask()
+        session.nextDataTask = dataTask
+        
+        guard let url = URL(string: "https://api.imgur.com/3") else {
+            fatalError("URL não pode ser vazia")
+        }
+        httpClient.get(url: url) { (success, response) in
+            // Return data
+        }
+        XCTAssert(dataTask.resumeWasCalled)
+    }
+    
+    func test_getShouldReturnData() {
+        let expectedData = "{}".data(using: .utf8)
+        
+        session.nextData = expectedData
+        
+        var actualData: Data?
+        httpClient.get(url: URL(string: "https://api.imgur.com/3")!) { (data, error) in
+            actualData = data
+        }
+        XCTAssertNotNil(actualData)
+    }
 }
